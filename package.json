@@ -1,0 +1,44 @@
+{
+  "name": "vscode-bulkcreate",
+  "displayName": "VSCode Bulk Create",
+  "description": "Generate files and folders from a list",
+  "publisher": "ZingLab",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:extension.generateFilesAndFolders"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.generateFilesAndFolders",
+        "title": "Generate Files and Folders"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.generateFilesAndFolders",
+          "when": "explorerResourceIsFolder || explorerResourceIsFile",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "icon": "resources/icon.png",
+  "author": {
+    "name": "ZingLab LLC",
+    "email": "contact@zinglab.com",
+    "url": "https://zinglab.com"
+  },
+  "contributors": [
+    {
+      "name": "Robert Allen",
+      "email": "contact@zinglab.com"
+    }
+  ]
+}
